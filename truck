@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "BMW",
+    "driver": {
+      "name": ""
+    },
+    "base": "BASE"
+  },
+  {
+    "id": 2,
+    "name": "Lexus",
+    "driver": {
+      "name": ""
+    },
+    "base": "BASE"
+  },
+  {
+    "id": 3,
+    "name": "Range Rover",
+    "driver": {
+      "name": ""
+    },
+    "base": "BASE"
+  },
+  {
+    "id": 4,
+    "name": "Honda",
+    "driver": {
+      "name": ""
+    },
+    "base": "BASE"
+  }
+]
