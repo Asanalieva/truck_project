@@ -48,15 +48,32 @@ public class Truck {
         this.state = state;
     }
 
-//    public static Car makeCar(int id, String name, String driver, State state){
-//        Car car = new Car();
-//        car.id = id;
-//        car.name = name;
-//        car.driver = driver;
-//        car.state = state;
-//        return car;
+
+
+//    public void startDriving(Driver driver) {
+//        switch (state) {
+//            case BASE -> {
+//                if (driver != null) {
+//                    String name = driver.getName();
+//                    this.driver = driver.getName();
 //
+//                    System.out.println("Теперь грузовик " + name + ", ведёт водитель " + driver.getName());
+//                } else {
+//                    this.driver = driver.getName();
+//                    System.out.println("new driver = " + driver.getName() + " to truck " + name);
+//                }
+//
+//            }
+//            case ROUTE -> {
+//                System.err.println("Грузовик в пути, невозможно сменить водителя.");
+//            }
+//            case REPAIR -> {
+//                System.err.println("Нельзя сменить водителя");
+//            }
+//        }
 //    }
+
+
 
 
     @Override

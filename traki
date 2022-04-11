@@ -16,8 +16,8 @@
     "name": "BMW  ",
     "driver": "",
     "state": "BASE"
-  },
-  {
+  }
+]] {
     "id": 4,
     "name": "Ferrari",
     "driver": "",
