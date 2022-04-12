@@ -75,70 +75,14 @@ public class Main {
                     }
                 }
             }
-//            if (choice == 1) {
-//                truckInformation(truck);
-//
-//
-//            } else if (choice == 2) {
-//                truckInformation(truck2);
-//            } else if (choice == 3) {
-//                truckInformation(truck3);
-//            }
-//            choice3();
-//            System.out.print("Choose one of the methods: ");
-//
-//
-//            int servicesInput = scanner.nextInt();
-//            if (servicesInput == 1) {
-//                truck.changeDriver(truck, drivers);
-////                truck2.changeDriver(truck2,drivers);
-////                truck3.changeDriver(truck3,drivers);
-//            } else if (servicesInput == 2) {
-//                truck.startDriving(truck , driver1);
-////                truck2.startDriving(truck2,driver2);
-////                truck2.startDriving(truck3,driver3);
-//            }
-
-//            methodToChanging1(truck, truck2, truck3, driver1, driver2, driver3);
             printAllInformation(trucks, drivers);
 
             write(json);
             writeDrivers(json2);
         }
 
-//            State[] states = {BASE,ROUTE,REPAIR};
-//            startDriving(states, drivers);
-//
-
-//        if (changing == 1) {
-//            for (Truck truck1 : trucks) {
-//                for(Driver driver : drivers){
-//
-//
-//                }truck1.changeDriver(driver1);
-//            }
-//        }
-
-//        for (Truck truck1 : trucks) {
-
-//        }
-//
-//        else if (changing == 2) {
-//            route();
-//
-//        } else if (changing == 3) {
-//            repair();
-//            truck.setDriver(driver3.getName());
-//        }
-//    System.out.println("#   | Bus     | Driver   | State   ");
-//    System.out.println("____+_________+__________+__________");
-//    for (Truck truck1 : trucks) {
-//        System.out.println(truck1);
-//    }
-//            printAllInformation(trucks, drivers);
     }
 
-//    }
 
 
     public static void write(String object) {
