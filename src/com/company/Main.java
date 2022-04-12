@@ -3,6 +3,7 @@ package com.company;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -21,56 +22,85 @@ public class Main {
     public static final Path PATH = Paths.get("./traki");
     public static final Path PATH2 = Paths.get("./drivers");
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         Scanner scanner = new Scanner(System.in);
 
-        Truck truck = new Truck(1, "Honda", "", BASE);
-        Truck truck2 = new Truck(2, "Lexus", "", BASE);
-        Truck truck3 = new Truck(3, "BMW  ", "", BASE);
+        Truck truck = new Truck(1, "Honda", null, BASE);
+        Truck truck2 = new Truck(2, "Lexus", null, BASE);
+        Truck truck3 = new Truck(3, "BMW  ", null, BASE);
         Truck[] trucks = {truck, truck2, truck3};
 
-        Driver driver1 = new Driver(1, "Steve", "");
-        Driver driver2 = new Driver(2, "Bill", "");
-        Driver driver3 = new Driver(3, "Yson", "");
-        Driver[] drivers = {driver1, driver2, driver3};
 
+        Driver driver1 = new Driver(1, "Steve", null);
+        Driver driver2 = new Driver(2, "Bill", null);
+        Driver driver3 = new Driver(3, "Yson", null);
+        Driver[] drivers = {driver1, driver2, driver3};
 
         String json = GSON.toJson(trucks);
         String json2 = GSON.toJson(drivers);
-//        write(json);
-//        writeDrivers(json2);
+        write(json);
+        writeDrivers(json2);
         System.out.println("#   | Bus     | Driver   | State   ");
         System.out.println("____+_________+__________+__________");
         for (Truck truck1 : trucks) {
             System.out.println(truck1);
         }
-        ServiceImplent services = new ServiceImplent();
 
         while (true) {
 
-            System.out.println("Choose one of the trucks: ");
+            System.out.println("Choose one of the trucks by ID: ");
+
             int choice = scanner.nextInt();
-            if (choice == 1) {
-                truckInformation(truck);
-            } else if (choice == 2) {
-                truckInformation(truck2);
-            } else if (choice == 3) {
-                truckInformation(truck3);
-            }
-            choice3();
-            System.out.print("Choose one of the methods: ");
 
-            int servicesInput = scanner.nextInt();
-            if (servicesInput == 1) {
-                services.changeDriver(trucks, drivers);
-            } else if (servicesInput == 2) {
-                services.startDriving(trucks[servicesInput - 2], drivers[servicesInput - 2]);
-            }
+            for (Truck truck1 : trucks) {
+                if(choice == truck1.getId()){
+                    truckInformation(truck1);
+                    choice3();
+                    int input = scanner.nextInt();
+                    if(input == 1){
+                        truck1.changeDriver(truck1,drivers);
+                        System.out.println("-----------------------------------");
+                        System.out.println("Driver is changed succfully!");
+                        printAllInformation(trucks, drivers);
+                    }else if(input == 2){
+                        truck1.startDriving(truck1);
+                        printAllInformation(trucks, drivers);
 
+                    }else if(input == 3){
+                        truck1.startRepairing(truck1);
+                        printAllInformation(trucks, drivers);
+                    }else {
+                        System.err.println("Couldn't find the truck!");
+                        throw new RuntimeException();
+                    }
+                }
+            }
+//            if (choice == 1) {
+//                truckInformation(truck);
+//
+//
+//            } else if (choice == 2) {
+//                truckInformation(truck2);
+//            } else if (choice == 3) {
+//                truckInformation(truck3);
+//            }
+//            choice3();
+//            System.out.print("Choose one of the methods: ");
+//
+//
+//            int servicesInput = scanner.nextInt();
+//            if (servicesInput == 1) {
+//                truck.changeDriver(truck, drivers);
+////                truck2.changeDriver(truck2,drivers);
+////                truck3.changeDriver(truck3,drivers);
+//            } else if (servicesInput == 2) {
+//                truck.startDriving(truck , driver1);
+////                truck2.startDriving(truck2,driver2);
+////                truck2.startDriving(truck3,driver3);
+//            }
 
 //            methodToChanging1(truck, truck2, truck3, driver1, driver2, driver3);
             printAllInformation(trucks, drivers);
-
 
             write(json);
             writeDrivers(json2);

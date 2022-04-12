@@ -5,14 +5,14 @@ public class Driver {
     private String name;
     private String truck;
 
-    public Driver() {
-    }
+    public Driver()  {}
 
     public Driver(int id, String name, String truck) {
         this.id = id;
         this.name = name;
         this.truck = truck;
     }
+
 
     public int getId() {
         return id;
@@ -40,6 +40,6 @@ public class Driver {
 
     @Override
     public String toString() {
-        return  id+"   | "+name + "        | "+truck;
+        return id+"      |  "+name + "        | "+truck;
     }
 }

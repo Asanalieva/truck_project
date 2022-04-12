@@ -1,16 +1,17 @@
 [
   {
     "id": 1,
-    "name": "Steve",
-    "truck": ""
+    "name": "Steve"
   },
   {
     "id": 2,
-    "name": "Bill",
-    "truck": ""
+    "name": "Bill"
   },
   {
     "id": 3,
+    "name": "Yson"
+  }
+] "id": 3,
     "name": "Yson",
     "truck": ""
   }
