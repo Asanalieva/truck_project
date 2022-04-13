@@ -52,7 +52,7 @@ public class Truck {
         this.state = state;
     }
 
-    public void changeDriver(Truck truck, Driver[] drivers) {
+    public void changeDriver(Truck truck, Driver[] drivers) { // bul jerde truck parametrge kelbeshi kerek
         for (Driver driver : drivers) {
             if (driver.getTruck() == null) {
                 driver.setTruck(truck.getName());
@@ -66,7 +66,7 @@ public class Truck {
         }
     }
 
-    public void startDriving(Truck truck) {
+    public void startDriving(Truck truck) { // bul jerge dagy
         if(truck.getState().equals(State.BASE) ){
             truck.setState(State.ROUTE);
             if(truck.getDriver() == null){
@@ -80,7 +80,7 @@ public class Truck {
             }
     }
 
-    public void startRepairing(Truck truck) {
+    public void startRepairing(Truck truck) { // bul jerge dagy
         if(truck.getState().equals(State.REPAIR)){
             System.err.println("Truck is already on Repair!");
             throw new RuntimeException();
